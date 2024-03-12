@@ -1,5 +1,7 @@
 
+function next(){
 
+}
 
 
 function type_coersion_Test(){
@@ -7,23 +9,28 @@ function type_coersion_Test(){
     var x = "10";
     var y = 10;
 
-
+    var c = typeof y;
+    //console.log(c);
 
     var a = String(x)+y;
     var b = Number(x)+y;
 
-    //var case1 = typeof(a) === "string";
-    var case1 = a instanceof String;
-    var case2 = typeof(b) === Number;
+    var case1 = typeof(a) === "string";
+    //var case1 = typeof(a) instanceof String;
+    var case2 = typeof(b) == "number";
     //var case2 = b instanceof Number; //TODO: How can I compare using its wrapper classes?
 
-
-    console.log(a);
-    console.log(typeof(a));
+    console.log(b);
+    console.log(typeof(b));
+    console.log(typeof(typeof(b)));
+    
+    /*console.log(a);
+    console.log(typeof(typeof(a)));
     console.log(case1);
     console.log(b);
-    console.log(case2);
+    console.log(case2);*/
     
+    //console.log(String.prototype.toString());
 
 
     pass = (case1 && case2)? true: false;
@@ -63,15 +70,6 @@ function stream_Test(){
 
 function assertTrue_Test(){
     return true;
-}
-
-//This will include all methods to be tested
-export function runTests(){
-    //console.log(assertTrue_Test.name + "Concat");
-    //console.log(assertTrue_Test.name, "NotherConcat");
-    console.log(assertTrue_Test.name + ": " + (assertTrue_Test()? "Passed":"Fail"));
-    console.log(stream_Test.name + ": " + (stream_Test()? "Passed":"Fail"));
-    console.log(add_toArray_Test.name + ": " + (add_toArray_Test()? "Passed":"Fail"));
 }
 
 export function runTestList(){
